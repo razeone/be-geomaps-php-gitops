@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: geomaps-frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: geomaps-frontend-nginx
+  ports:
+      - name: http-port
+        protocol: TCP
+        port: 80
+        targetPort: 80
