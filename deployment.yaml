@@ -1,43 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "9"
-  creationTimestamp: "2022-10-06T18:06:12Z"
-  generation: 9
+  creationTimestamp: null
   labels:
-    app: geomaps-php
-  name: geomaps-php
-  namespace: geomaps
-  resourceVersion: "4250395"
-  uid: b417aca0-f7f6-4e7f-af42-4696f83e0351
+    app: be-geomaps-php
+  name: be-geomaps-php
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: geomaps-php
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+      app: be-geomaps-php
+  strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: geomaps-php
+        app: be-geomaps-php
     spec:
       containers:
       - image: razeonex/geomaps-php:v0.1.0
-        imagePullPolicy: IfNotPresent
         name: geomaps-php
         resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+status: {}
