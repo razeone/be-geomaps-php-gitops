@@ -18,7 +18,7 @@ spec:
         app: be-geomaps-php
     spec:
       containers:
-      - image: razeonex/geomaps-php:v0.1.1
+      - image: razeonex/geomaps-php:v0.1.2
         name: geomaps-php
         resources: {}
 status: {}
